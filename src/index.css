@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #fffbf2;
+    color: #1e1b18;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+.comic-dots {
+  background-color: #fffbf2;
+  background-image: radial-gradient(rgba(30, 27, 24, 0.065) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.comic-shadow {
+  box-shadow: 4px 4px 0px #1e1b18;
+}
+
+.comic-shadow-lg {
+  box-shadow: 6px 6px 0px #1e1b18;
+}
+
+.comic-shadow-sm {
+  box-shadow: 2px 2px 0px #1e1b18;
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  15% { transform: translate3d(-7px, 5px, 0) rotate(-1deg); }
+  30% { transform: translate3d(7px, -5px, 0) rotate(1deg); }
+  45% { transform: translate3d(-6px, -3px, 0) rotate(-0.8deg); }
+  60% { transform: translate3d(5px, 4px, 0) rotate(0.8deg); }
+  75% { transform: translate3d(-3px, 2px, 0) rotate(-0.4deg); }
+}
+
+@keyframes screen-shake-heavy {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  12% { transform: translate3d(-11px, 7px, 0) rotate(-1.8deg); }
+  25% { transform: translate3d(11px, -8px, 0) rotate(1.8deg); }
+  38% { transform: translate3d(-9px, -5px, 0) rotate(-1.2deg); }
+  52% { transform: translate3d(8px, 6px, 0) rotate(1.2deg); }
+  68% { transform: translate3d(-5px, 3px, 0) rotate(-0.6deg); }
+  84% { transform: translate3d(4px, -2px, 0) rotate(0.4deg); }
+}
+
+@keyframes float-up {
+  0% { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.85); }
+  20% { opacity: 1; transform: translate3d(0, -4px, 0) scale(1.08); }
+  80% { opacity: 1; transform: translate3d(0, -24px, 0) scale(1); }
+  100% { opacity: 0; transform: translate3d(0, -36px, 0) scale(0.95); }
+}
+
+@keyframes slap-pop {
+  0% { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+  45% { opacity: 1; transform: scale(1.18) rotate(4deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-3deg); }
+}
+
+@keyframes character-bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes sweat-drop {
+  0% { opacity: 0; transform: translate3d(0, -4px, 0); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(8px, 18px, 0); }
+}
+
+.animate-shake {
+  animation: screen-shake 0.34s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-shake-heavy {
+  animation: screen-shake-heavy 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-float-up {
+  animation: float-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slap-pop {
+  animation: slap-pop 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bob {
+  animation: character-bob 2.2s ease-in-out infinite;
+}
+
+.animate-sweat {
+  animation: sweat-drop 0.65s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shake,
+  .animate-shake-heavy,
+  .animate-bob,
+  .animate-sweat {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Nepok Jidat",
+  "description": "Game arcade komik kasual di mana kamu harus menepuk jidat tepat waktu saat karakter melontarkan kelakuan konyol khas Indonesia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
